@@ -1,4 +1,4 @@
-# flutter_fight_club_2
+# flutter_fight_club
 
 A new Flutter project.
 
