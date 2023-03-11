@@ -51,7 +51,7 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.main.dart">
+  <component name="RunManager" selected="Flutter Test.l02h01">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
@@ -62,6 +62,12 @@
       <option name="useRegexp" value="true" />
       <method v="2" />
     </configuration>
+    <configuration name="l02h01" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="l02h01" />
+      <option name="testFile" value="$PROJECT_DIR$/test/widget_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="tests in widget_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testFile" value="$PROJECT_DIR$/test/widget_test.dart" />
       <option name="useRegexp" value="false" />
@@ -69,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.l02h01" />
         <item itemvalue="Flutter Test.tests in widget_test.dart" />
         <item itemvalue="Flutter Test.Counter increments smoke test" />
       </list>
