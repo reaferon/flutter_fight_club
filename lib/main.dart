@@ -35,9 +35,43 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(width: 16),
-              Expanded(child: Center(child: Text("You"))),
+              Expanded(
+                child: Column(
+                  children: [
+                    Center(child: Text("You"),),
+                    SizedBox(height: 11,),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                  ],
+                ),
+              ),
               SizedBox(width: 12),
-              Expanded(child: Center(child: Text("Enemy"))),
+              Expanded(
+                child: Column(
+                  children: [
+                    Center(child: Text("Enemy"),),
+                    SizedBox(height: 11,),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                    Center(child: Text("1")),
+                    SizedBox(height: 4),
+                  ],
+                ),
+              ),
               SizedBox(width: 16),
             ],
           ),
@@ -62,6 +96,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       selected: defendingBodyPart == BodyPart.torso,
                       bodyPartSetter: _selectDefendingBodyPart,
                     ),
+                    SizedBox(height: 14),
+                    BodyPartButton(
+                      bodyPart: BodyPart.legs,
+                      selected: defendingBodyPart == BodyPart.legs,
+                      bodyPartSetter: _selectDefendingBodyPart,
+                    ),
+
                   ],
                 ),
               ),
@@ -82,6 +123,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       selected: attackingBodyPart == BodyPart.torso,
                       bodyPartSetter: _selectAttackingBodyPart,
                     ),
+                    SizedBox(height: 14),
+                    BodyPartButton(
+                      bodyPart: BodyPart.legs,
+                      selected: attackingBodyPart == BodyPart.legs,
+                      bodyPartSetter: _selectAttackingBodyPart,
+                    ),
                   ],
                 ),
               ),
@@ -94,30 +141,34 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(width: 16),
               Expanded(
                   child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if(defendingBodyPart != null && attackingBodyPart != null ) {
-                          defendingBodyPart = null;
-                          attackingBodyPart = null;
-                        }
-                      });
-                    },
-                    child: SizedBox(
-                      height: 40,
-                      child: ColoredBox(
-                        color: Colors.black87,
-                        child: Center(
-                          child: Text(
-                          "Go".toUpperCase(),
-                          style: TextStyle(
+                onTap: () {
+                  setState(() {
+                    if (defendingBodyPart != null &&
+                        attackingBodyPart != null) {
+                      defendingBodyPart = null;
+                      attackingBodyPart = null;
+                    }
+                  });
+                },
+                child: SizedBox(
+                  height: 40,
+                  child: ColoredBox(
+                    color:
+                        (defendingBodyPart != null && attackingBodyPart != null)
+                            ? Colors.black87
+                            : Color.fromRGBO(0, 0, 0, 0.38),
+                    child: Center(
+                      child: Text(
+                        "Go".toUpperCase(),
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w900),
                       ),
                     ),
+                  ),
                 ),
-              ),
-                  )),
+              )),
               SizedBox(width: 16),
             ],
           ),
@@ -147,6 +198,7 @@ class BodyPart {
 
   static const head = BodyPart._("Head");
   static const torso = BodyPart._("Torso");
+  static const legs = BodyPart._("Legs");
 
   @override
   String toString() {
