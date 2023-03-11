@@ -163,7 +163,7 @@ class BodyPartButton extends StatelessWidget {
       child: SizedBox(
         height: 40,
         child: ColoredBox(
-          color: selected ? Color.fromRGBO(28, 121, 206, 1) : Colors.black26,
+          color: selected ? Color.fromRGBO(28, 121, 206, 1) : Color.fromRGBO(0, 0, 0, 0.38),
           child: Center(
               child: Text(
             bodyPart.name.toUpperCase(),
