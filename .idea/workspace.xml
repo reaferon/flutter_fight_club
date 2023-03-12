@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cf44d0a-9549-4689-94ec-d4f8a6c3b04d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fight_club_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resources/fight_club_colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fight_club_icons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resources/fight_club_icons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/fight_club_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/resources/fight_club_images.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lesson_2/task_2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/lesson_2/task_2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lesson_2/task_3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/lesson_2/task_3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/lesson_2/task_5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/lesson_2/task_5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +73,8 @@
       <recent name="$PROJECT_DIR$/google_fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/resources" />
+      <recent name="$PROJECT_DIR$/lib/widgets" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
   </component>
