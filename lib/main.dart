@@ -25,13 +25,14 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   static const maxLives = 5;
   int yourLives = maxLives;
   int enemyLives = maxLives;
+  String centerText = "";
 
   BodyPart? defendingBodyPart;
   BodyPart? attackingBodyPart;
@@ -58,7 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: FightClubColors.darkPurple,
                   child: SizedBox(
                     width: double.infinity,
-
+                    child: Center(
+                        child: Text(
+                      centerText,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: FightClubColors.darkGreyText,
+                      ),
+                    )),
                   ),
                 ),
               ),
@@ -112,6 +120,21 @@ class _MyHomePageState extends State<MyHomePage> {
       if (youLoseLife) {
         yourLives -= 1;
       }
+      if (enemyLives == 0 && yourLives == 0) {
+        centerText = "Draw";
+      } else if (yourLives == 0) {
+        centerText = "You lost";
+      } else if (enemyLives == 0) {
+        centerText = "You won";
+      } else {
+        centerText = (attackingBodyPart != whatEnemyDefends)
+            ? "You hit enemy's ${attackingBodyPart!.name.toLowerCase()}.\n"
+            : "Your attack was blocked.\n";
+        centerText += (defendingBodyPart != whatEnemyAttack)
+            ? "Enemy hit your ${whatEnemyAttack!.name.toLowerCase()}.\n"
+            : "Enemy attack was blocked.\n";
+      }
+
       whatEnemyDefends = BodyPart.random();
       whatEnemyAttack = BodyPart.random();
 
@@ -221,7 +244,11 @@ class FightersInfo extends StatelessWidget {
                     style: TextStyle(color: FightClubColors.darkGreyText),
                   ),
                   SizedBox(height: 12),
-                  Image.asset(FightClubImages.youAvatar, width: 92, height: 92,),
+                  Image.asset(
+                    FightClubImages.youAvatar,
+                    width: 92,
+                    height: 92,
+                  ),
                 ],
               ),
               ColoredBox(
@@ -237,7 +264,11 @@ class FightersInfo extends StatelessWidget {
                   Text("Enemy",
                       style: TextStyle(color: FightClubColors.darkGreyText)),
                   SizedBox(height: 12),
-                  Image.asset(FightClubImages.enemyAvatar, width: 92, height: 92,),
+                  Image.asset(
+                    FightClubImages.enemyAvatar,
+                    width: 92,
+                    height: 92,
+                  ),
                 ],
               ),
               LivesWidget(
@@ -350,16 +381,24 @@ class LivesWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: List.generate(overallLivesCount, (index) {
           if (index < currentLivesCount) {
-            return Image.asset(
-              FightClubIcons.heartFull,
-              width: 18,
-              height: 18,
+            return Padding(
+              padding: EdgeInsets.only(
+                  bottom: (index < overallLivesCount - 1) ? 4 : 0),
+              child: Image.asset(
+                FightClubIcons.heartFull,
+                width: 18,
+                height: 18,
+              ),
             );
           } else {
-            return Image.asset(
-              FightClubIcons.heartEmpty,
-              width: 18,
-              height: 18,
+            return Padding(
+              padding: EdgeInsets.only(
+                  bottom: (index < overallLivesCount - 1) ? 4 : 0),
+              child: Image.asset(
+                FightClubIcons.heartEmpty,
+                width: 18,
+                height: 18,
+              ),
             );
           }
         }));
