@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_fight_club/fight_club_icons.dart';
+import 'package:flutter_fight_club/fight_club_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(213, 222, 240, 1),
+      backgroundColor: FightClubColors.background,
       body: SafeArea(
         child: Column(
           children: [
@@ -73,11 +74,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Color _getGoButtonColor() {
     if(yourLives == 0 || enemyLives == 0) {
-      return Colors.black38;
+      return FightClubColors.greyButton;
     } else if(defendingBodyPart != null && attackingBodyPart != null) {
-      return Colors.black87;
+      return FightClubColors.blackButton;
     } else {
-      return Colors.black38;
+      return FightClubColors.greyButton;
     }
   }
 
@@ -136,7 +137,7 @@ class GoButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16), 
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: GestureDetector(
         onTap: onTap,
         child: SizedBox(
@@ -147,7 +148,7 @@ class GoButton extends StatelessWidget {
               child: Text(
                 text.toUpperCase(),
                 style: TextStyle(
-                    color: Colors.white,
+                    color: FightClubColors.whiteText,
                     fontSize: 16,
                     fontWeight: FontWeight.w900),
               ),
@@ -174,6 +175,7 @@ class FightersInfo extends StatelessWidget {
       height: 160,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           LivesWidget(
             overallLivesCount: maxLivesCount,
@@ -182,7 +184,7 @@ class FightersInfo extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: 16),
-              Text("You"),
+              Text("You", style: TextStyle(color: FightClubColors.darkGreyText),),
               SizedBox(height: 12),
               ColoredBox(color: Colors.red, child: SizedBox(width: 92,height: 92,),)
             ],
@@ -191,7 +193,7 @@ class FightersInfo extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: 16),
-              Text("Enemy"),
+              Text("Enemy", style: TextStyle(color: FightClubColors.darkGreyText)),
               SizedBox(height: 12),
               ColoredBox(color: Colors.blue, child: SizedBox(width: 92,height: 92,),)
             ],
@@ -229,7 +231,7 @@ class ControlsWidget extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-              Text("Defend".toUpperCase()),
+              Text("Defend".toUpperCase(), style: TextStyle(color: FightClubColors.darkGreyText)),
               SizedBox(height: 13),
               BodyPartButton(
                 bodyPart: BodyPart.head,
@@ -255,7 +257,7 @@ class ControlsWidget extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-              Text("Attack".toUpperCase()),
+              Text("Attack".toUpperCase(), style: TextStyle(color: FightClubColors.darkGreyText)),
               SizedBox(height: 13),
               BodyPartButton(
                 bodyPart: BodyPart.head,
@@ -352,13 +354,13 @@ class BodyPartButton extends StatelessWidget {
         height: 40,
         child: ColoredBox(
           color: selected
-              ? Color.fromRGBO(28, 121, 206, 1)
-              : Color.fromRGBO(0, 0, 0, 0.38),
+              ? FightClubColors.blueButton
+              : FightClubColors.greyButton,
           child: Center(
               child: Text(
                 bodyPart.name.toUpperCase(),
                 style: TextStyle(
-                  color: Color.fromRGBO(16,13, 20, 1),
+                  color: FightClubColors.darkGreyText,
                 ),
               )),
         ),
